@@ -1,5 +1,5 @@
 from importlib.resources import path
-from django.urls import URLPattern, include, path
+from django.urls import include, path
 from .views import eventsView
 
 urlpatterns = [

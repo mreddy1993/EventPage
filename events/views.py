@@ -8,5 +8,5 @@ from .models import eventModels
 
 
 class eventsView(ListView):
-    models = eventModels
+    model = eventModels
     template_name = "calendar.html"
