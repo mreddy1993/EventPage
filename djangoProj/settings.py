@@ -33,13 +33,14 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'general.apps.GeneralConfig',
     'django.contrib.admin',
+    'accounts.apps.AccountsConfig',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'events.apps.EventsConfig',
-    'accounts.apps.AccountsConfig'
+    
     
 ]
 
@@ -141,3 +142,6 @@ STATICFILES_DIR = [str(BASE_DIR.joinpath('static'))]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT = ""
 LOGOUT_REDIRECT = ""
+
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH = str(BASE_DIR.joinpath("emails/"))
