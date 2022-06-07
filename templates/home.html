@@ -2,7 +2,11 @@
 
 {% block content %}
     <h1>
-        <p>Home Page</p>
+        <p>Events List</p>
+        <a href = "{% url 'create' %}">New Event</a>
     </h1>
+    {% for entryModels in object_list %}
+        <a href = "{% url 'details' entryModels.pk %}">{{eventModels.title}}</a>
 
+    {% endfor %}
 {% endblock  %}

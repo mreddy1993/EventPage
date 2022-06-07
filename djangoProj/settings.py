@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'general.apps.GeneralConfig',
+    'events.apps.EventsConfig',
     'django.contrib.admin',
     'accounts.apps.AccountsConfig',
     'django.contrib.auth',
@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'events.apps.EventsConfig',
+   
     
     
 ]

@@ -6,11 +6,12 @@ from django.urls import reverse
 
 class eventModels(models.Model):
     title = models.CharField(max_length=100)
-    date = models.DateField
-    eventDescription = models.TextField
+    date = models.DateField()
+    eventDescription = models.TextField()
+    location = models.CharField(max_length=100)
 
     def __str__(self):
         return self.title
     
     def get_absolute_url(self):
-        reverse.lazy("events", args =[str(self.id)])
+        return reverse("events")
