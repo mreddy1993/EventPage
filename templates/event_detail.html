@@ -1,9 +1,7 @@
-{% extends base.html %}
+{% extends "base.html" %}
 
 {% block content %}
-<h1>
-{{eventModel.title}}
-</h1>
-
+<h1> {{ eventModels.title }} </h1>
+<p1>{{ eventModels.description }}</p1>
 
 {% endblock content %}

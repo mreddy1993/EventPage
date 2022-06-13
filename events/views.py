@@ -1,6 +1,7 @@
 from ast import Pass
 from django.shortcuts import render
-from django.views.generic import ListView, TemplateView, CreateView, DetailView
+from django.views.generic import ListView, TemplateView, DetailView
+from django.views.generic.edit import CreateView, UpdateView
 
 from .models import eventModels
 
@@ -22,3 +23,7 @@ class eventCreate(CreateView):
 class eventDetails(DetailView):
     model = eventModels
     template_name = "event_detail.html"
+
+class eventUpdate(UpdateView):
+    model = eventModels
+    template_name = "event_update"

@@ -14,4 +14,4 @@ class eventModels(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse("events")
+        return reverse("details", args=[str(self.id)])
