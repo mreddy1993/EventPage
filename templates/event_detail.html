@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1> {{ eventModels.title }} </h1>
-<p1>{{ eventModels.description }}</p1>
+<h1> {{ object.title }} </h1>
+<p2>Event Description: </br>
+    {{ object.eventDescription }}
+</p2>
 
+<h3>
+    <a href="{% url 'update' object.pk %}">Edit Event</a>
+</h3>
 {% endblock content %}
