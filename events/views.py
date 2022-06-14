@@ -33,4 +33,4 @@ class eventUpdate(UpdateView):
 class eventDelete(DeleteView):
     model = eventModels
     template_name = "event_delete.html"
-    success_url: reverse_lazy("events")
+    success_url = reverse_lazy("events")

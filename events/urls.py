@@ -8,5 +8,5 @@ urlpatterns = [
     path("new/", eventCreate.as_view(), name = "create"),
     path("<int:pk>/", eventDetails.as_view(), name = "detail"),
     path("<int:pk>/edit", eventUpdate.as_view(), name = "update"),
-    path("<int:pk>/delete", eventDelete.as_view(), name = "delete")
+    path("<int:pk>/delete", eventDelete.as_view(), name = "delete"),
 ]
