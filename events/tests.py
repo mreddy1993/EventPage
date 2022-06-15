@@ -5,6 +5,10 @@ from .models import eventModels
 
 class eventTests(TestCase):
     @classmethod
+    def setUpTestData(cls):
+        cls.user = get_user_model.objects.create_user(username="testuser", email = "test@email.com", password = "password" )
+        cls.eventModels = eventModels.obejects.create(title= "New", date = "1/1/2020", eventDescription = "test description", location = "somewhere")
+    
     
     def test_Event_Content(self):
         def test_createEvent(self):
@@ -20,6 +24,23 @@ class eventTests(TestCase):
             self.assertEquals(response.status_code, 302)
             self.assertEquals(eventModels.objects.last().title(),"test1")
       
+        def test_updateEvent(self):
+            response = self.client.post(
+            reverse("update", args = 1),
+            {
+                "title": "Updated Title",
+                "location": "Middle Earth"
+            }
+
+            )
+
+            self.assertEquals(response.status_code, 302)
+            self.assertEquals(eventModels.objects.last().title(), "Updated Title")
+
+        def test_deleteEvent(self):
+            response = self.client.post("delete", args = 1)
+            self.assertEquals(response.status_code, 302) 
+
       
       
       
